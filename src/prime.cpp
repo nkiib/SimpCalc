@@ -142,9 +142,7 @@ std::string prime_generate(std::vector<std::string> augment){
         // 乱数を生成して出力
         
         mpz_init(randNum.get_mpz_t());
-        mpz_urandomb(randNum.get_mpz_t(), state, stoi(augment[1]));
-        
-        std::cout << randNum << std::endl;
+        mpz_urandomb(randNum.get_mpz_t(), state, stoi(augment[0]));
 
         if(prime_test(randNum)){
             oss << randNum;
