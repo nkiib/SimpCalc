@@ -1,0 +1,5 @@
+/build
+/.vscode
+/config
+.DS_Store
+*.txt
