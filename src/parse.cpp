@@ -31,6 +31,8 @@ std::string parse(std::string input){
         result = pow(augment);
     }else if(command == "mod"){
         result = mod(augment);
+    }else if(command == "factoriz"){
+        result = factoriz(augment);
     }
 
 

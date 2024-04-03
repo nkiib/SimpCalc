@@ -66,4 +66,9 @@ std::string prime_check(std::vector<std::string>);
 /// @return 結果
 std::string mod(std::vector<std::string>);
 
+/// @brief 素因数分解
+/// @param 引数リスト
+/// @return 結果
+std::string factoriz(std::vector<std::string>);
+
 #endif

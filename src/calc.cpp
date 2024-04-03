@@ -61,3 +61,37 @@ std::string mod(std::vector<std::string> augment){
     return oss.str();
 }
 
+std::string factoriz(std::vector<std::string> augment){
+    if(!augment_check(augment, 1)){
+        return "error:arguments are missing.";
+    }
+
+
+    std::ostringstream oss;
+
+    mpz_class CompositeNumber, d , q;
+    mpz_set_str(CompositeNumber.get_mpz_t(), augment[0].c_str(), 10);
+
+    oss << CompositeNumber << " = ";
+    while(CompositeNumber >= 4 && CompositeNumber % 2 == 0){
+        oss << "2 * "; 
+        CompositeNumber /= 2;
+    }
+
+    d = 3;
+    q = CompositeNumber / d;
+
+    while(q >= d){
+        if(CompositeNumber % d == 0){
+            oss << d << " * ";
+            CompositeNumber = q;
+        }else{
+            d += 2;
+        }
+        q = CompositeNumber / d;
+    }
+
+    oss << CompositeNumber;
+
+    return oss.str();
+}
