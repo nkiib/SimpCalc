@@ -102,7 +102,7 @@ bool prime_test(mpz_class prime_candidate){
 }
 
 std::string prime_check(std::vector<std::string> augment){
-    if(!augment_check(augment,1)){
+    if(!arguments_check(augment,1)){
         return "error:arguments are missing.";
     }
 
@@ -118,7 +118,7 @@ std::string prime_check(std::vector<std::string> augment){
 }
 
 std::string prime_generate(std::vector<std::string> augment){
-    if(!augment_check(augment,1)){
+    if(!arguments_check(augment,1)){
         return "error:arguments are missing.";
     }
 

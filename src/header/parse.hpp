@@ -10,7 +10,7 @@
 /// @param  引数ベクター
 /// @param  要求引数の個数
 /// @return 結果
-bool augment_check(std::vector<std::string>, int);
+bool arguments_check(std::vector<std::string>, int);
 
 /// @brief 構文解析と実行
 /// @param input 

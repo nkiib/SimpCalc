@@ -9,30 +9,29 @@
 std::string parse(std::string input){
     std::string result; // 結果を格納する変数
     std::string command; // コマンド
-    std::vector<std::string> augment; // 引数
+    std::vector<std::string> arguments; // 引数
     std::string arg;// 引数のtmp
     // 構文解析をするためにSSに格納する
     std::stringstream stream;
     stream << input;
     stream >> command;
 
-
     while(stream >> arg){
-        augment.push_back(arg);
+        arguments.push_back(arg);
     }
 
     if(command == "sum"){
-        result = sum(augment);
+        result = sum(arguments);
     }else if(command == "prime"){
-        result = prime_check(augment);
+        result = prime_check(arguments);
     }else if(command == "genprime"){
-        result = prime_generate(augment);
+        result = prime_generate(arguments);
     }else if(command == "pow"){
-        result = pow(augment);
+        result = pow(arguments);
     }else if(command == "mod"){
-        result = mod(augment);
+        result = mod(arguments);
     }else if(command == "factoriz"){
-        result = factoriz(augment);
+        result = factoriz(arguments);
     }
 
 
