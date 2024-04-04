@@ -94,3 +94,18 @@ std::string factoriz(std::vector<std::string> arguments){
     return oss.str();
 }
 
+std::string average(std::vector<std::string> arguments){
+    mpf_class sum = 0.0;
+    mpf_class tmp , result;
+    for (size_t i = 0; i < arguments.size(); ++i) {
+        mpf_set_str(tmp.get_mpf_t(),arguments[i].c_str(),10);
+        sum += tmp;
+    }
+
+    result = sum / arguments.size();
+
+    std::ostringstream oss;
+    oss << result;
+    
+    return oss.str();
+}

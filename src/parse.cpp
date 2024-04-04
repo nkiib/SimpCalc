@@ -32,6 +32,8 @@ std::string parse(std::string input){
         result = mod(arguments);
     }else if(command == "factoriz"){
         result = factoriz(arguments);
+    }else if(command == "average"){
+        result = average(arguments);
     }
 
 
