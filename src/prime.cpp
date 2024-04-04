@@ -92,6 +92,8 @@ bool MillerRabin(mpz_class candidate , int k){
 bool prime_test(mpz_class prime_candidate){
     std::vector<int> prime_ary = GenPrimeVector(1000);
 
+    if(prime_candidate == 2) return true;
+
     if(Trial_Division(prime_candidate , prime_ary)){
             // MR法
         if(MillerRabin(prime_candidate, 3)){
@@ -122,13 +124,17 @@ std::string prime_generate(std::vector<std::string> arguments){
         return "error:arguments are missing.";
     }
 
+    // 1 bit に素数はないためあらかじめ除外
+    if(arguments[0] == "1"){
+        return "None";
+    }
 
     gmp_randstate_t state;
     gmp_randinit_default(state);
     std::ostringstream oss;
 
-    auto now = std::chrono::system_clock::now();
-    auto duration = now.time_since_epoch();
+    std::chrono::system_clock::time_point now;
+    std::chrono::system_clock::duration duration;
     unsigned long seed;
 
     mpz_class randNum;
