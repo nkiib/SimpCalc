@@ -11,7 +11,7 @@ int main(int argc, char * argv[]){
 
     std::string input;
 
-    std::cout << "Launched" << std::endl;
+    std::cout << "Tlooks SimpCalc v0.1.0-alpha (C)2024 Nishiki-Hub" << std::endl;
 
     while (true) {
         std::cout << ">>> ";
