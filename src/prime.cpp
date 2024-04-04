@@ -101,14 +101,14 @@ bool prime_test(mpz_class prime_candidate){
     return false;
 }
 
-std::string prime_check(std::vector<std::string> augment){
-    if(!arguments_check(augment,1)){
+std::string prime_check(std::vector<std::string> arguments){
+    if(!arguments_check(arguments,1)){
         return "error:arguments are missing.";
     }
 
     mpz_class prime_candidate;
 
-    mpz_set_str(prime_candidate.get_mpz_t(), augment[0].c_str(), 10);
+    mpz_set_str(prime_candidate.get_mpz_t(), arguments[0].c_str(), 10);
 
     if(prime_test(prime_candidate)){
         return "Prime.";
@@ -117,10 +117,11 @@ std::string prime_check(std::vector<std::string> augment){
     }
 }
 
-std::string prime_generate(std::vector<std::string> augment){
-    if(!arguments_check(augment,1)){
+std::string prime_generate(std::vector<std::string> arguments){
+    if(!arguments_check(arguments,1)){
         return "error:arguments are missing.";
     }
+
 
     gmp_randstate_t state;
     gmp_randinit_default(state);
@@ -142,7 +143,7 @@ std::string prime_generate(std::vector<std::string> augment){
         // 乱数を生成して出力
         
         mpz_init(randNum.get_mpz_t());
-        mpz_urandomb(randNum.get_mpz_t(), state, stoi(augment[0]));
+        mpz_urandomb(randNum.get_mpz_t(), state, stoi(arguments[0]));
 
         if(prime_test(randNum)){
             oss << randNum;
