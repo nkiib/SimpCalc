@@ -15,35 +15,35 @@ bool arguments_check(std::vector<std::string>, int);
 /// @brief 構文解析と実行
 /// @param input 
 /// @return 結果
-std::string parse(std::string input);
+std::string parse(std::string);
 
 /// @brief 引数の合計を計算する関数
 /// @param augment 引数ベクター
 /// @return 結果
-std::string sum(std::vector<std::string> augment);
+std::string sum(std::vector<std::string>);
 
 /// @brief 累乗を計算する関数
 /// @param augment 引数ベクター
 /// @return 結果
-std::string pow(std::vector<std::string> augment);
+std::string pow(std::vector<std::string>);
 
 /// @brief 素数テストを行う
 /// @param augment 引数ベクター
 /// @return 結果
-bool prime_test(std::vector<std::string> augment);
+bool prime_test(std::vector<std::string>);
 
 
 /// @brief 素数判定で用いる試行割算を実行する
 /// @param candidate 素数候補
 /// @param prime_ary 試行割り算に用いる素数リスト
 /// @return 結果
-bool Trial_Division(mpz_class candidate, std::vector<int> prime_ary);
+bool Trial_Division(mpz_class, std::vector<int>);
 
 /// @brief MillerRabin法による素数判定
 /// @param candidate 素数候補
 /// @param num 試行回数
 /// @return 結果
-bool MillerRabin(mpz_class candidate, int num);
+bool MillerRabin(mpz_class , int);
 
 
 /// @brief 試行割算で用いる素数リストの作成
