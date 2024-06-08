@@ -37,7 +37,7 @@ std::vector<int> GenPrimeVector(int num){
 }
 
 bool Trial_Division(mpz_class candidate , std::vector<int> prime_ary){
-        if(prime_ary.empty()) return 1; // ファイルが開けなかったときエラーで終了
+    if(prime_ary.empty()) return 1; // ファイルが開けなかったときエラーで終了
 
     mpz_class ans;
     for(int i = 0;i < prime_ary.size();i++){
