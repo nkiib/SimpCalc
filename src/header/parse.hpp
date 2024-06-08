@@ -76,4 +76,14 @@ std::string factoriz(std::vector<std::string>);
 /// @return 結果
 std::string average(std::vector<std::string>);
 
+/// @brief 平方根のプロセス関数
+/// @param  対象となる数
+/// @return 結果
+mpf_class square_process(mpf_class);
+
+/// @brief 平方根
+/// @param  引数リスト
+/// @return 結果
+std::string square(std::vector<std::string>);
+
 #endif

@@ -109,3 +109,51 @@ std::string average(std::vector<std::string> arguments){
     
     return oss.str();
 }
+
+mpf_class square_process(mpf_class x){
+
+    mpf_class s, last;
+
+    if(x > 0){
+        if(x > 1){
+            s = x;
+        }else{
+            s = 1;
+        }
+        do{
+            last = s;
+            s = ( x / s + s)/2;
+        }while(s < last);
+        return last;
+    }
+
+    if(x != 0){
+        return -1;
+    }
+
+    return 0;
+}
+
+std::string square(std::vector<std::string> arguments){
+    if(!arguments_check(arguments,1)){
+        return "error:arguments are missing.";
+    }
+
+    std::stringstream oss;
+
+    mpf_class x;
+
+    mpf_set_str(x.get_mpf_t(), arguments[0].c_str(), 10);
+
+    mpf_class s;
+
+    if(x == 0){
+        oss << 0;
+    }
+
+    s = square_process(x);
+    oss << (x / s + s) / 2;
+
+    return oss.str();
+
+}
