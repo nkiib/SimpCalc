@@ -11,4 +11,4 @@
 * `genprime {arg}` `arg`bitの素数を生成
 * `factoriz {arg}` `arg`を素因数分解
 * `average {arg1} {arg2}...` 引数の平均の計算
-
+* `square {arg}` 引数の平方根を計算
