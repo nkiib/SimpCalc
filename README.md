@@ -1,4 +1,4 @@
-# Tlooks SimpCalc
+# SimpCalc
 
 計算コマンドを実装したタイプの対話型計算プログラム
 
@@ -12,3 +12,5 @@
 * `factoriz {arg}` `arg`を素因数分解
 * `average {arg1} {arg2}...` 引数の平均の計算
 * `square {arg}` 引数の平方根を計算
+
+# 
