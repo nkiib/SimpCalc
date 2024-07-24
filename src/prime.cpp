@@ -147,7 +147,6 @@ std::string prime_generate(std::vector<std::string> arguments){
         gmp_randseed_ui(state, seed);
 
         // 乱数を生成して出力
-        
         mpz_init(randNum.get_mpz_t());
         mpz_urandomb(randNum.get_mpz_t(), state, stoi(arguments[0]));
 
