@@ -95,6 +95,10 @@ std::string factoriz(std::vector<std::string> arguments){
 }
 
 std::string average(std::vector<std::string> arguments){
+    if(!arguments_check(arguments, 1)){
+        return "error:arguments are missing.";
+    }
+
     mpf_class sum = 0.0;
     mpf_class tmp , result;
     for (size_t i = 0; i < arguments.size(); ++i) {
