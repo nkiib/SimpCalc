@@ -36,7 +36,9 @@ std::string parse(std::string input){
         result = average(arguments);
     }else if(command == "square"){
         result = square(arguments);
-    }  
+    }else if(command == "factorial"){
+        result = factorial(arguments);
+    }
 
     else{
         result = "SimpCalc: command not found:" + command;

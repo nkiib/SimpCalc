@@ -32,7 +32,6 @@ std::string pow(std::vector<std::string>);
 /// @return 結果
 bool prime_test(std::vector<std::string>);
 
-
 /// @brief 素数判定で用いる試行割算を実行する
 /// @param candidate 素数候補
 /// @param prime_ary 試行割り算に用いる素数リスト
@@ -44,7 +43,6 @@ bool Trial_Division(mpz_class, std::vector<int>);
 /// @param num 試行回数
 /// @return 結果
 bool MillerRabin(mpz_class , int);
-
 
 /// @brief 試行割算で用いる素数リストの作成
 /// @param 個数
@@ -85,5 +83,11 @@ mpf_class square_process(mpf_class);
 /// @param  引数リスト
 /// @return 結果
 std::string square(std::vector<std::string>);
+
+/// @brief 階乗
+/// @param 引数リスト
+/// @return 結果
+std::string factorial(std::vector<std::string>);
+
 
 #endif

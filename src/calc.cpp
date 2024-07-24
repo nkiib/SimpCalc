@@ -106,7 +106,7 @@ std::string average(std::vector<std::string> arguments){
 
     std::ostringstream oss;
     oss << result;
-    
+
     return oss.str();
 }
 
@@ -155,5 +155,21 @@ std::string square(std::vector<std::string> arguments){
     oss << (x / s + s) / 2;
 
     return oss.str();
+}
 
+std::string factorial(std::vector<std::string> arguments){
+    if(!arguments_check(arguments, 1)){
+        return "error:arguments are missing.";
+    }
+
+    std::stringstream oss;
+    mpz_class result = 1, tmp, num;
+    mpz_set_str(num.get_mpz_t() , arguments[0].c_str() , 10);
+    
+    for(mpz_class i = 1;i <= num; i++){
+        result *= i;
+    }
+
+    oss << result;
+    return oss.str();
 }
