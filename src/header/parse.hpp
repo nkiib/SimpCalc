@@ -89,5 +89,17 @@ std::string square(std::vector<std::string>);
 /// @return 結果
 std::string factorial(std::vector<std::string>);
 
+/// @brief 最大公約数
+/// @param 引数リスト
+/// @return 結果
+std::string divisor(std::vector<std::string>);
+
+/// @brief 最小公倍数
+/// @param 引数リスト
+/// @return 結果
+std::string multiple(std::vector<std::string>);
+
+
+
 
 #endif

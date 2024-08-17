@@ -177,3 +177,53 @@ std::string factorial(std::vector<std::string> arguments){
     oss << result;
     return oss.str();
 }
+
+mpz_class gcd_process(mpz_class a, mpz_class b){
+    while(b != 0){
+        mpz_class temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    return a;
+}
+
+std::string divisor(std::vector<std::string> arguments){
+    if(!arguments_check(arguments, 2)){
+        return "error:arguments are missing";
+    }
+    std::stringstream oss;
+
+    mpz_class result , tmp;
+    mpz_set_str(result.get_mpz_t(), arguments[0].c_str(), 10);
+
+    for(int i = 1; i < arguments.size() ;i++){
+        mpz_set_str(tmp.get_mpz_t(), arguments[i].c_str(), 10);
+        result = gcd_process(result, tmp);
+    }
+
+    oss << result;
+    return oss.str();
+}
+
+mpz_class lcm(mpz_class a, mpz_class b){
+    return (a * b) / gcd(a,b);
+}
+
+std::string multiple(std::vector<std::string> arguments){
+    if(!arguments_check(arguments, 2)){
+        return "error:arguments are missing.";
+    }
+    std::stringstream oss;
+
+    mpz_class result, tmp;
+    mpz_set_str(result.get_mpz_t(), arguments[0].c_str() , 10);
+
+    for(int i = 1; i < arguments.size() ;i++){
+        mpz_set_str(tmp.get_mpz_t(), arguments[i].c_str(), 10);
+        result = lcm(result, tmp);
+    }
+
+    oss << result;
+    return oss.str();    
+}

@@ -38,6 +38,10 @@ std::string parse(std::string input){
         result = square(arguments);
     }else if(command == "factorial"){
         result = factorial(arguments);
+    }else if(command == "gcd"){
+        result = divisor(arguments);
+    }else if(command == "lcm"){
+        result = multiple(arguments);
     }
 
     else{
